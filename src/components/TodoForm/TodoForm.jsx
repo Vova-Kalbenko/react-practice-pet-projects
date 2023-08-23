@@ -1,8 +1,8 @@
-import React, { useState,} from 'react';
+import React, { useState, } from 'react';
 import shortid from 'shortid';
 function TodoForm(addTodo) {
   const [input, setInput] = useState(addTodo.edit ? addTodo.edit.value : '');
-  
+
   // console.log(addTodo)
 
 
@@ -21,7 +21,7 @@ function TodoForm(addTodo) {
     });
     setInput('');
   };
-// render accordint to condition if updateInput is open
+  // render according to condition if updateInput is open
   return (
     <form onSubmit={handleSubmit} className='todo-form'>
       {addTodo.edit ? (
@@ -34,7 +34,7 @@ function TodoForm(addTodo) {
             className='todo-input edit'
             autoFocus
           />
-          <button onClick={handleSubmit} className='todo-button edit'>
+          <button type='submit' onClick={handleSubmit} className='todo-button edit'>
             Update
           </button>
         </>
@@ -48,7 +48,7 @@ function TodoForm(addTodo) {
             className='todo-input'
             autoFocus
           />
-          <button onClick={handleSubmit} className='todo-button'>
+          <button type='submit' onClick={handleSubmit} className='todo-button'>
             Add todo
           </button>
         </>

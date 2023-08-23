@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoForm from '../TodoForm/TodoForm';
 import Todo from '../Todo/Todo';
-
-function TodoList() {
+// import inithialTodos from './todos.json'
+export default function TodoList() {
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const lsTodos = JSON.parse(localStorage.getItem('todos'));
+    if (lsTodos) {
+      setTodos(lsTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos)); 
+   }, [todos])
+
 
   const addTodo = todo => {
     if (todo.text === '') {
       return;
     }
-
-    const newTodos = [todo, ...todos];
-
-    setTodos(newTodos);
-    // console.log(...todos);
+    
+    setTodos(((prevTodos) => [...prevTodos, todo]));
   };
 
   const updateTodo = (todoId, newValue) => {
@@ -21,7 +30,7 @@ function TodoList() {
       return;
     }
 
-    setTodos(prevState => prevState.map(item => ( item.id === todoId ? newValue : item)));
+    setTodos(prevState => prevState.map(item => (item.id === todoId ? newValue : item)));
   };
 
   const removeTodo = id => {
@@ -33,13 +42,11 @@ function TodoList() {
   const completeTodo = id => {
     let updatedTodos = todos.map(todo => {
       // console.log(todo)
-      if (todo.id === id){
+      if (todo.id === id) {
         return {
           ...todo,
           completed: !todo.completed,
         };
-       
-
       }
       return todo;
     });
@@ -60,4 +67,3 @@ function TodoList() {
   );
 }
 
-export default TodoList;
