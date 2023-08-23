@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-practice-pet-projects/static/css/main.ff135591.css",
-    "main.js": "/react-practice-pet-projects/static/js/main.0a124e00.js",
+    "main.js": "/react-practice-pet-projects/static/js/main.29e9093a.js",
     "index.html": "/react-practice-pet-projects/index.html",
     "main.ff135591.css.map": "/react-practice-pet-projects/static/css/main.ff135591.css.map",
-    "main.0a124e00.js.map": "/react-practice-pet-projects/static/js/main.0a124e00.js.map"
+    "main.29e9093a.js.map": "/react-practice-pet-projects/static/js/main.29e9093a.js.map"
   },
   "entrypoints": [
     "static/css/main.ff135591.css",
-    "static/js/main.0a124e00.js"
+    "static/js/main.29e9093a.js"
   ]
 }
