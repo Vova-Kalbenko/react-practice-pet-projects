@@ -1,6 +1,6 @@
 [
-    { "id": "id-1", "text": "gergwerg", "completed": true },
-    { "id": "id-2", "text": "TOdo-2", "completed": false },
-    { "id": "id-3", "text": "TOdo-3", "completed": false },
-    { "id": "id-4", "text": "TOdo-4", "completed": false }
+    { "id": "id-1", "text": "ToDo-1", "completed": true },
+    { "id": "id-2", "text": "ToDo-2", "completed": false },
+    { "id": "id-3", "text": "ToDo-3", "completed": false },
+    { "id": "id-4", "text": "ToDo-4", "completed": false }
 ]

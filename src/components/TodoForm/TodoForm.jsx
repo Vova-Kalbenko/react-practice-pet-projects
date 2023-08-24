@@ -26,28 +26,38 @@ function TodoForm(addTodo) {
     <form onSubmit={handleSubmit} className='todo-form'>
       {addTodo.edit ? (
         <>
-          <input
-            placeholder='Update your item'
-            value={input}
-            onChange={handleChange}
-            name='text'
-            className='todo-input edit'
-            autoFocus
-          />
+          <label>
+            <input
+              placeholder='Update your item'
+              value={input}
+              onChange={handleChange}
+              name='text'
+              className='todo-input edit'
+              autoFocus
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+            />
+          </label>
           <button type='submit' onClick={handleSubmit} className='todo-button edit'>
             Update
           </button>
         </>
       ) : (
         <>
-          <input
-            placeholder='Add a todo'
-            value={input}
-            onChange={handleChange}
-            name='text'
-            className='todo-input'
-            autoFocus
-          />
+          <label>
+            <input
+              placeholder='Add a todo'
+              value={input}
+              onChange={handleChange}
+              name='text'
+              className='todo-input'
+              autoFocus
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+            />
+          </label>
           <button type='submit' onClick={handleSubmit} className='todo-button'>
             Add todo
           </button>
