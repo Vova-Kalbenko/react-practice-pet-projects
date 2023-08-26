@@ -6,15 +6,13 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: '',
-    completed: false
   });
 
   const submitUpdate = value => {
-    updateTodo(edit.id, value, edit.completed);
+    updateTodo(edit.id, value);
     setEdit({
       id: null,
       value: '',
-      completed: false
     });
   };
 

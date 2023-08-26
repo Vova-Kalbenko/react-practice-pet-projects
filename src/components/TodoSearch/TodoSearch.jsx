@@ -1,21 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+// import {toast} from 'react-toastify'
 
-const TodoSearch = () => {
-    const [searchTodo, setSearchTodo] = useState('')
-
-    const handleSearchTodo = (e) => {
-        e.preventdefault()
-        setSearchTodo(e.target.value)
-    }
-
+const TodoSearch = ({searchTodo, changeSearch }) => {
 
     return (
-        <form onSubmit={handleSearchTodo} className='todo-form'>
+        <form 
+         className='todo-form'>
             <label>
                 <input
-                    placeholder='Update your item'
+                    placeholder='Search your Todo'
                     value={searchTodo}
-                    // onChange={handleSearchTodo}
+                    onChange={changeSearch}
                     name='text'
                     className='todo-input edit'
                     autoFocus

@@ -3,10 +3,12 @@ import TodoForm from '../TodoForm/TodoForm';
 import Todo from '../Todo/Todo';
 import inithialTodos from './todos.json'
 import TodoSearch from 'components/TodoSearch/TodoSearch';
-import { toast, ToastContainer } from 'react-toastify/dist/components';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import css from './TodoList.module.css'
 export default function TodoList() {
   const [todos, setTodos] = useState(inithialTodos);
+
 
   useEffect(() => {
     const lsTodos = JSON.parse(localStorage.getItem('todos'));
@@ -97,21 +99,35 @@ export default function TodoList() {
 
     return todos.reduce((acc, todo) => (todo.completed ? acc + 1 : acc), 0);
   };
+  const [searchTodo, setSearchTodo] = useState('')
+   const changeSearch = e => {
 
+    // console.log(e)
+    setSearchTodo(e.target.value);
+  };
+
+  const getVisibleTodos = () => {
+    const normalizedSearch = searchTodo.toLowerCase();
+    return todos.filter(todo =>
+      todo.text.toLowerCase().includes(normalizedSearch)
+    );
+  };
+
+  const visibleTodos = getVisibleTodos();
   const completedTodos = calcCompletedTodos();
   return (
     <>
-      <h1>Todos</h1>
-      <p>Total TODOS:{todos.length}</p>
-      <p>Completed Todos:{completedTodos}</p>
+      <h1 className={css.mainTitle}>Todos</h1>
+      <p className={css.stats}>Total TODOS: {todos.length}</p>
+      <p className={css.stats}>Completed Todos: {completedTodos}</p>
       <TodoForm onSubmit={addTodo} />
       <Todo
-        todos={todos}
+        todos={visibleTodos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
-      <TodoSearch />
+      <TodoSearch value={searchTodo} changeSearch={changeSearch}/>
       <ToastContainer/>
 
     </>
