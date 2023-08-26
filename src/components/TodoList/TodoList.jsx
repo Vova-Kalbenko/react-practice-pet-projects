@@ -40,6 +40,7 @@ export default function TodoList() {
         progress: undefined,
         theme: "light",
         });
+        return
     } else if (todo.text === '') {
       toast.warn('🦄 All fields must be filled in!', {
         position: "top-right",
@@ -51,6 +52,7 @@ export default function TodoList() {
         progress: undefined,
         theme: "light",
         });
+        return
     }
 
     setTodos(((prevTodos) => [...prevTodos, todo]));
