@@ -6,7 +6,9 @@ import TodoSearch from 'components/TodoSearch/TodoSearch';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import css from './TodoList.module.css'
+import { BsEmojiSmile } from 'react-icons/bs';
 export default function TodoList() {
+  
   const [todos, setTodos] = useState(inithialTodos);
 
 
@@ -121,7 +123,8 @@ export default function TodoList() {
     <>
       <h1 className={css.mainTitle}>Todos</h1>
       <p className={css.stats}>Total TODOS: {todos.length}</p>
-      <p className={css.stats}>Completed Todos: {completedTodos}</p>
+      <p className={css.stats}>Completed Todos: {completedTodos} </p>
+      <p className={css.stats}>Click on Todo to make it completed <BsEmojiSmile/></p>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={visibleTodos}

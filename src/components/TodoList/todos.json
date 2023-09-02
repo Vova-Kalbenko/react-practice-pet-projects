@@ -1,6 +1,6 @@
 [
-    { "id": "id-1", "text": "ToDo-1", "completed": true },
-    { "id": "id-2", "text": "ToDo-2", "completed": false },
-    { "id": "id-3", "text": "ToDo-3", "completed": false },
-    { "id": "id-4", "text": "ToDo-4", "completed": false }
+    { "id": "id-1", "text": "Make an awesome refreshing drink", "completed": false },
+    { "id": "id-2", "text": "Do morning exercises", "completed": false },
+    { "id": "id-3", "text": "Call your parents (you should do that anyway).", "completed": false },
+    { "id": "id-4", "text": "Learn JavaScript, TypeScript, React, Redux", "completed": false }
 ]
